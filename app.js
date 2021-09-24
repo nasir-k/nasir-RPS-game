@@ -12,7 +12,7 @@ const getPlayerChoice = () => {
     const choice = prompt(`${ROCK}, ${PAPER} or ${SCISSOR}`,'').toLocaleUpperCase();
     if (choice !== ROCK && choice !== PAPER && choice !== SCISSOR)
     {
-        alert(`Invalid Chopice, We picked ${DEFAULT_PLAYER_CHOICE} For You `)
+        alert(`Invalid Choice, We picked ${DEFAULT_PLAYER_CHOICE} For You `)
         return;
     }
     return choice;
@@ -52,7 +52,8 @@ function getStartGame () {
     else {
         winner = getWinner(CompuerChoice);
     }
-    let message = `You Picked ${PlayerChoice} and Computer Picked ${CompuerChoice}, Therefore You`;
+    let message = `You Picked ${PlayerChoice || DEFAULT_PLAYER_CHOICE} and Computer Picked ${CompuerChoice}, Therefore You`;
+    
     if(winner === RESULT_DRAW){
         message = message + `had a Draw`;
     }
